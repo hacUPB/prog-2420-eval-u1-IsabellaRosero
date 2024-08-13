@@ -75,3 +75,151 @@ Editores de Código: Como Sublime Text o Atom, que permiten escribir y editar c�
 Compiladores e Intérpretes: Programas que convierten el código fuente en código ejecutable o interpretan el código en tiempo real.
 Sistemas de Control de Versiones: Como Git, que gestionan y registran los cambios en el código fuente a lo largo del tiempo.
 Herramientas de Construcción y Automatización: Como Maven o Gradle, que automatizan el proceso de compilación y despliegue.
+
+# **Mapa conceptual**
+https://www.canva.com/design/DAGL_a4Dh7c/h5L2WabLU6SobYy-cjBpbQ/view?utm_content=DAGL_a4Dh7c&utm_campaign=designshare&utm_medium=link&utm_source=editor
+
+# **Respuestas**
+# **¿Cuál es la función principal de cada componente investigado?**
+### CPU
+Procesar datos y ejecutar instrucciones.
+
+### RAM
+Almacenar temporalmente datos e instrucciones para acceso rápido.
+
+### Almacenamiento HDD y SSD
+Almacenar datos de forma permanente; los SSD son más rápidos y duraderos que los HDD.
+
+### Placa base (Motherboard)
+Conectar e integrar todos los componentes del sistema.
+### Dispositivos de entrada y salida
+ermitir la entrada de datos al sistema y la salida de información al usuario
+
+### Buses (Datos y direccion)
+Transferir datos y coordinar operaciones entre componentes del sistema.
+
+## Investigacion Software
+
+### Sistema Operativo
+Coordinar y gestionar servicios y aplicaciones, proporcionando una interfaz entre el hardware y el usuario.
+
+### Aplicaciones de usuario
+Permitir a los usuarios realizar tareas específicas.
+
+### Drivers
+Facilitar la comunicación entre el sistema operativo y el hardware.
+### Software de desarrollo
+Proveer herramientas para la creación y mantenimiento de software.
+
+# **¿Cómo interactúa el hardware con el software, cuál es la función de cada uno?**
+### Hardware
+Función Principal:
+Ejecutar Operaciones Físicas: Realiza cálculos, mueve datos y ejecuta instrucciones.
+Almacenar y Transferir Datos: Provee la capacidad de memoria y almacenamiento para guardar y mover datos.
+
+### Software
+Función Principal:
+Proveer Instrucciones: Da órdenes específicas al hardware sobre qué operaciones realizar.
+Gestionar Recursos: Administra y coordina el uso de hardware por diferentes aplicaciones y usuarios.
+
+### Cómo Interactúan
+Sistema Operativo:
+
+Intermediario: Gestiona la comunicación entre las aplicaciones de software y el hardware.
+Drivers: Facilitan la comunicación precisa entre el hardware y el sistema operativo, traduciendo las instrucciones del software en comandos comprensibles para el hardware.
+Aplicaciones:
+
+Solicitan Servicios: Piden recursos y servicios al sistema operativo para realizar tareas específicas.
+Interacción de Usuario: Permiten la entrada de datos y muestran resultados al usuario a través de dispositivos de hardware.
+CPU:
+
+Procesamiento de Instrucciones: Ejecuta las instrucciones del software, realizando cálculos y operaciones lógicas.
+Control de Flujo de Datos: Gestiona el movimiento de datos entre la memoria y otros componentes.
+RAM:
+
+Almacenamiento Temporal: Guarda temporalmente las instrucciones y datos necesarios para la ejecución de programas.
+Acceso Rápido: Permite que la CPU acceda rápidamente a los datos y programas en ejecución.
+Almacenamiento (HDD y SSD):
+
+Almacenamiento Permanente: Guarda datos y programas de manera permanente hasta que se necesiten.
+Carga de Programas: Los programas se cargan desde el almacenamiento a la RAM para su ejecución.
+Buses:
+
+Transferencia de Datos: Facilitan la comunicación entre la CPU, RAM y otros componentes de hardware, moviendo datos e instrucciones entre ellos.
+Dispositivos de Entrada y Salida (I/O):
+
+Interacción de Usuario: Los dispositivos de entrada permiten al usuario enviar datos al sistema, mientras que los dispositivos de salida presentan los resultados del procesamiento al usuario.
+
+# **¿Cuál es la función de la CPU y cuáles son sus partes más importantes?**
+Función de la CPU
+La CPU (Unidad Central de Procesamiento) es el cerebro del sistema informático, encargada de procesar instrucciones y realizar cálculos necesarios para que el sistema operativo y las aplicaciones funcionen.
+
+Partes Más Importantes de la CPU
+Unidad de Control (CU):
+
+Función: Coordina y dirige las operaciones de la CPU.
+Unidad Aritmética Lógica (ALU):
+
+Función: Realiza operaciones aritméticas y lógicas.
+Registros:
+
+Función: Almacenan temporalmente datos e instrucciones.
+Unidad de Gestión de Memoria (MMU):
+
+Función: Gestiona la interacción con la memoria RAM.
+Memoria Caché:
+
+Función: Almacena datos e instrucciones de uso frecuente para acceso rápido.
+Buses de Datos y Direcciones:
+
+Función: Transfieren datos y direcciones de memoria.
+Reloj del Sistema:
+
+Función: Sincroniza las operaciones de la CPU.
+
+# **¿Qué es la velocidad de la CPU, también conocida como velocidad del reloj?**
+Velocidad de la CPU (Velocidad del Reloj)
+La velocidad de la CPU, también conocida como velocidad del reloj, se refiere a la frecuencia a la que la CPU puede ejecutar instrucciones. Se mide en hercios (Hz), con frecuencias más altas que se expresan en megahercios (MHz) o gigahercios (GHz).
+
+### Función y Importancia
+Función: La velocidad del reloj indica cuántos ciclos de instrucción puede completar la CPU por segundo. Un ciclo de reloj es la unidad de medida para el tiempo que le toma a la CPU realizar una operación básica, como mover datos o realizar un cálculo.
+Importancia: Una velocidad de reloj más alta generalmente significa que la CPU puede ejecutar más instrucciones por segundo, lo que puede traducirse en un rendimiento más rápido y eficiente para las tareas computacionales.
+Ejemplo de Velocidad del Reloj
+Una CPU con una velocidad de 3 GHz puede ejecutar 3 mil millones de ciclos por segundo.
+
+# **¿Cuál es la secuencia de pasos que ocurre, desde el momento en que presionas el botón de encendido de la computadora, hasta que se muestra el sistema operativo listo para funcionar? Describe todos los elementos involucrados y el paso a paso?**
+
+Qué Sucede al Encender la Computadora
+
+### Presionar el Botón de Encendido:
+Qué Pasa: Enciendes la computadora y le das energía a todos los componentes internos.
+
+### Fuente de Poder Enciende:
+Qué Pasa: La fuente de poder asegura que todo tenga electricidad y envía una señal para decir que está lista.
+
+### BIOS/UEFI se Activa:
+Qué Pasa: El BIOS (o UEFI en computadoras más modernas) se enciende. Es como el "supervisor" inicial que revisa que todo el hardware (como la CPU y la RAM) esté funcionando bien.
+
+### Revisión de Hardware (POST):
+Qué Pasa: El BIOS revisa rápidamente que todo el hardware básico (memoria, teclado, etc.) esté funcionando correctamente.
+
+### Buscar Dispositivos de Arranque:
+Qué Pasa: El BIOS busca en el disco duro o SSD para encontrar el sistema operativo (como Windows o macOS) que debe iniciar.
+
+### Cargar el Bootloader:
+Qué Pasa: El BIOS encuentra el bootloader, que es un pequeño programa que inicia el sistema operativo.
+
+### Iniciar el Sistema Operativo:
+Qué Pasa: El bootloader carga el sistema operativo en la memoria de la computadora.
+
+### Preparar el Sistema Operativo:
+Qué Pasa: El sistema operativo comienza a configurarse y cargar todos los controladores necesarios para el hardware (como la impresora y el teclado).
+
+### Cargar Programas de Inicio:
+Qué Pasa: El sistema operativo carga automáticamente programas que deben iniciarse con la computadora, como el antivirus.
+
+### Mostrar Pantalla de Inicio o Escritorio:
+Qué Pasa: Finalmente, el sistema operativo muestra la pantalla de inicio de sesión o el escritorio, permitiéndote usar la computadora.
+
+# **Comenta algo que no sabías y que descubriste en esta actividad**
+Una cosa que no sabía y que descubrí en esta actividad es cómo el proceso de arranque de una computadora implica varios pasos específicos que suceden en un orden muy preciso. Por ejemplo, no sabía que el BIOS o UEFI hace una revisión completa del hardware antes de que el sistema operativo se cargue. Me sorprendió saber que el BIOS hace una prueba rápida llamada POST para asegurarse de que todo, desde la memoria hasta el teclado, esté funcionando bien. Además, descubrí que el bootloader es un programa pequeño que se encarga de cargar el sistema operativo en la memoria. Todo esto sucede antes de que pueda ver el escritorio de mi computadora. ¡Es increíble cómo todo está organizado para que podamos empezar a usar la computadora sin problemas.
