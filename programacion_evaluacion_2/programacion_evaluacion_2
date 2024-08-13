@@ -1,0 +1,245 @@
+# ACTIVIDAD 2
+# SISTEMAS NUMERICOS
+
+# Diagrama de bloques 
+- https://miro.com/welcomeonboard/ZndwRWlIY0xlZ21LdE82T091RnZBYm0xMUZZdkxmeWFIdE9yUTZ4T3JKZFdRakxKaHdXVHlJTlAwZE1CelFjS3wzNDU4NzY0NTUzNjQyODk0NzgxfDI=?share_link_id=410018812945
+
+# Casos de aplicación
+
+
+## Caso de Aplicación 1
+
+### Valores de los Sensores
+
+- **Velocidad**: 450 mph
+- **Altitud**: 20,000 pies
+- **Temperatura**: 25°C
+
+### Set Points
+
+- **Velocidad**: 500 mph
+- **Altitud**: 25,000 pies
+- **Temperatura**: 20°C
+
+### Constante Proporcional (KPK_PKP)
+
+- **KP** = 1.5
+
+### Paso 1: Datos Binarios de los Sensores
+
+- **Velocidad**: 450 mph → `011100001001110000100111000010` (10 bits)
+- **Altitud**: 20,000 pies → `010011100001001110000100111000` (10 bits)
+- **Temperatura**: 25°C → `000001100010000011000100000110001` (12 bits)
+
+### Paso 2: Codificación de Sensores
+
+- **Encabezado para Velocidad**: `000000`
+- **Encabezado para Altitud**: `010101`
+- **Encabezado para Temperatura**: `101010`
+
+**Bit de Paridad** calculado usando paridad par (asumiendo paridad simple para ilustrar):
+
+- **Velocidad**: `011100001001110000100111000010` tiene 5 bits en 1 (impar), bit de paridad: `111`
+- **Altitud**: `010011100001001110000100111000` tiene 4 bits en 1 (par), bit de paridad: `000`
+- **Temperatura**: `000001100010000011000100000110001` tiene 3 bits en 1 (impar), bit de paridad: `111`
+
+**Datos Codificados**:
+
+- **Velocidad**: `000000` + `011100001001110000100111000010` + `111`
+- **Altitud**: `010101` + `010011100001001110000100111000` + `000`
+- **Temperatura**: `101010` + `000001100010000011000100000110001` + `111`
+
+### Paso 3: Decodificación
+
+- Extraer encabezado, datos y bit de paridad
+- Verificar bit de paridad para detección de errores (no detallado aquí)
+
+### Paso 4: Conversión Bin2Dec
+
+- **Velocidad**: `011100001001110000100111000010` → 450 (decimal)
+- **Altitud**: `010011100001001110000100111000` → 20,000 (decimal)
+- **Temperatura**: `000001100010000011000100000110001` → 25 (decimal)
+
+### Paso 5: Cálculo de Error
+
+- **Velocidad**: 450 - 500 = -50
+- **Altitud**: 20,000 - 25,000 = -5,000
+- **Temperatura**: 25 - 20 = 5
+
+### Paso 6: Conversión Dec2Bin
+
+- **Velocidad**: -50 → Representación de complemento a 2 en 10 bits
+- **Altitud**: -5,000 → Representación de complemento a 2 en 10 bits
+- **Temperatura**: 5 → `000000010100000001010000000101` (12 bits)
+
+### Paso 7: Control Proporcional
+
+- **Velocidad**: -50 × 1.5 = -75
+- **Altitud**: -5,000 × 1.5 = -7,500
+- **Temperatura**: 5 × 1.5 = 7.5
+
+### Paso 8: Codificación de la CPU
+
+- Convertir valores de control a binario (asumiendo truncamiento si necesario)
+
+
+
+## Caso de Aplicación 2
+
+### Valores de los Sensores
+
+- **Velocidad**: 300 mph
+- **Altitud**: 15,000 pies
+- **Temperatura**: 50°C
+
+### Set Points
+
+- **Velocidad**: 500 mph
+- **Altitud**: 25,000 pies
+- **Temperatura**: 20°C
+
+### Constante Proporcional (KPK_PKP)
+
+- **KP** = 1.5
+
+### Paso 1: Datos Binarios de los Sensores
+
+- **Velocidad**: 300 mph → `010010110001001011000100101100` (10 bits)
+- **Altitud**: 15,000 pies → `001110011000111001100011100110` (10 bits)
+- **Temperatura**: 50°C → `000011001000001100100000110010` (12 bits)
+
+### Paso 2: Codificación de Sensores
+
+- **Encabezado para Velocidad**: `000000`
+- **Encabezado para Altitud**: `010101`
+- **Encabezado para Temperatura**: `101010`
+
+**Bit de Paridad**:
+
+- **Velocidad**: `010010110001001011000100101100` tiene 4 bits en 1 (par), bit de paridad: `000`
+- **Altitud**: `001110011000111001100011100110` tiene 5 bits en 1 (impar), bit de paridad: `111`
+- **Temperatura**: `000011001000001100100000110010` tiene 3 bits en 1 (impar), bit de paridad: `111`
+
+**Datos Codificados**:
+
+- **Velocidad**: `000000` + `010010110001001011000100101100` + `000`
+- **Altitud**: `010101` + `001110011000111001100011100110` + `111`
+- **Temperatura**: `101010` + `000011001000001100100000110010` + `111`
+
+### Paso 3: Decodificación
+
+- Extraer encabezado, datos y bit de paridad
+
+### Paso 4: Conversión Bin2Dec
+
+- **Velocidad**: `010010110001001011000100101100` → 300 (decimal)
+- **Altitud**: `001110011000111001100011100110` → 15,000 (decimal)
+- **Temperatura**: `000011001000001100100000110010` → 50 (decimal)
+
+### Paso 5: Cálculo de Error
+
+- **Velocidad**: 300 - 500 = -200
+- **Altitud**: 15,000 - 25,000 = -10,000
+- **Temperatura**: 50 - 20 = 30
+
+### Paso 6: Conversión Dec2Bin
+
+- **Velocidad**: -200 → Representación de complemento a 2 en 10 bits
+- **Altitud**: -10,000 → Representación de complemento a 2 en 10 bits
+- **Temperatura**: 30 → `000001111000000111100000011110` (12 bits)
+
+### Paso 7: Control Proporcional
+
+- **Velocidad**: -200 × 1.5 = -300
+- **Altitud**: -10,000 × 1.5 = -15,000
+- **Temperatura**: 30 × 1.5 = 45
+
+### Paso 8: Codificación de la CPU
+
+- Convertir valores de control a binario (asumiendo truncamiento si necesario)
+
+
+
+## Caso de Aplicación 3
+
+### Valores de los Sensores
+
+- **Velocidad**: 550 mph
+- **Altitud**: 35,000 pies
+- **Temperatura**: -10°C
+
+### Set Points
+
+- **Velocidad**: 500 mph
+- **Altitud**: 25,000 pies
+- **Temperatura**: 20°C
+
+### Constante Proporcional (KPK_PKP)
+
+- **KP** = 1.5
+
+### Paso 1: Datos Binarios de los Sensores
+
+- **Velocidad**: 550 mph → `100010011010001001101000100110` (10 bits)
+- **Altitud**: 35,000 pies → `100010110010001011001000101100` (10 bits)
+- **Temperatura**: -10°C → `111101011011110101101111010110` (12 bits)
+
+### Paso 2: Codificación de Sensores
+
+- **Encabezado para Velocidad**: `000000`
+- **Encabezado para Altitud**: `010101`
+- **Encabezado para Temperatura**: `101010`
+
+**Bit de Paridad**:
+
+- **Velocidad**: `100010011010001001101000100110` tiene 4 bits en 1 (par), bit de paridad: `000`
+- **Altitud**: `100010110010001011001000101100` tiene 4 bits en 1 (par), bit de paridad: `000`
+- **Temperatura**: `111101011011110101101111010110` tiene 6 bits en 1 (par), bit de paridad: `000`
+
+**Datos Codificados**:
+
+- **Velocidad**: `000000` + `100010011010001001101000100110` + `000`
+- **Altitud**: `010101` + `100010110010001011001000101100` + `000`
+- **Temperatura**: `101010` + `111101011011110101101111010110` + `000`
+
+### Paso 3: Decodificación
+
+- Extraer encabezado, datos y bit de paridad
+
+### Paso 4: Conversión Bin2Dec
+
+- **Velocidad**: `100010011010001001101000100110` → 550 (decimal)
+- **Altitud**: `100010110010001011001000101100` → 35,000 (decimal)
+- **Temperatura**: `111101011011110101101111010110` → -10 (decimal)
+
+### Paso 5: Cálculo de Error
+
+- **Velocidad**: 550 - 500 = 50
+- **Altitud**: 35,000 - 25,000 = 10,000
+- **Temperatura**: -10 - 20 = -30
+
+### Paso 6: Conversión Dec2Bin
+
+- **Velocidad**: 50 → `000011001000001100100000110010` (10 bits)
+- **Altitud**: 10,000 → `100111000100001001110001000010011100010000` (representación de 16 bits para manejar el valor)
+- **Temperatura**: -30 → Representación de complemento a 2 en 12 bits
+
+### Paso 7: Control Proporcional
+
+- **Velocidad**: 50 × 1.5 = 75
+- **Altitud**: 10,000 × 1.5 = 15,000
+- **Temperatura**: -30 × 1.5 = -45
+
+### Paso 8: Codificación de la CPU
+
+- Convertir valores de control a binario (asumiendo truncamiento si necesario)
+
+
+
+## Conclusiones
+
+- La actividad me ayudó a entender cómo se recolectan y procesan los datos de diferentes sensores en un sistema de control, como el de una aeronave.
+- Aprendí a manejar datos binarios, incluyendo su codificación, decodificación y conversión entre sistemas numéricos como decimal y hexadecimal.
+- La actividad mostró cómo calcular errores en los datos de los sensores y aplicar un control proporcional para ajustar estos errores.
+- Se destacó la importancia de dividir un sistema complejo en módulos más pequeños y manejables, y la necesidad de una buena comunicación entre estos módulos.
+- Los ejercicios prácticos con valores de sensores reales me permitieron aplicar los conocimientos teóricos en situaciones concretas, reforzando mi aprendizaje.
