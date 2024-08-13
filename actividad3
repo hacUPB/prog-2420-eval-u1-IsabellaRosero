@@ -1,0 +1,163 @@
+# Ejercicios de Programación
+
+## Primer Problema: Cálculo de Promedio para Aprobación de Exámenes
+
+Ana quiere saber si ha aprobado sus exámenes finales. Tiene una lista de sus calificaciones y necesita calcular el promedio. Para aprobar, debe tener un promedio de al menos 3.0.
+
+# Seudocódigo
+
+## Problema 1: Calcular Promedio de Calificaciones
+
+### Descripción del Problema:
+Ana necesita calcular el promedio de sus calificaciones para saber si ha aprobado. Para aprobar, el promedio debe ser al menos 3.0.
+
+### Variables:
+- `calificaciones`: Lista de calificaciones en formato texto separadas por comas.
+- `calificaciones_numericas`: Lista para almacenar las calificaciones convertidas a números.
+- `suma`: Variable para almacenar la suma total de las calificaciones.
+- `promedio`: Resultado del cálculo del promedio.
+- `estado`: Resultado de si el promedio es suficiente para aprobar.
+
+### Seudocódigo:
+
+**Inicio**
+
+1. **Solicitar Calificaciones:**
+    - Imprimir "Ingrese las calificaciones separadas por comas: "
+    - Leer la entrada del usuario (`calificaciones`).
+
+2. **Convertir las Calificaciones a Números:**
+    - Dividir `calificaciones` en una lista de cadenas usando comas.
+    - Crear una lista vacía `calificaciones_numericas` para almacenar las calificaciones numéricas.
+    - Para cada cadena en la lista:
+        - Convertir la cadena a un número flotante.
+        - Añadir el número flotante a `calificaciones_numericas`.
+
+3. **Calcular el Promedio:**
+    - Inicializar `suma` en 0.
+    - Para cada calificación en `calificaciones_numericas`:
+        - Añadir la calificación a `suma`.
+    - Contar el número de calificaciones en `calificaciones_numericas`.
+    - Dividir `suma` entre el número de calificaciones para obtener `promedio`.
+
+4. **Determinar el Estado de Aprobación:**
+    - Si `promedio` es mayor o igual a 3.0:
+        - Establecer `estado` como "Aprobado".
+    - De lo contrario:
+        - Establecer `estado` como "No aprobado".
+
+5. **Mostrar Resultados:**
+    - Imprimir "Promedio: ", seguido del valor de `promedio`.
+    - Imprimir "Estado: ", seguido del valor de `estado`.
+
+**Fin**
+
+
+
+## Segundo Problema: Simular el Crecimiento de una Población de Bacterias
+
+### Descripción del Problema:
+Queremos simular cómo crece una población de bacterias en un cultivo basándonos en una tasa de crecimiento diaria.
+
+### Variables:
+- `numero_inicial_bacterias`: Número inicial de bacterias en el cultivo.
+- `tasa_crecimiento_diaria`: Tasa de crecimiento diaria en porcentaje.
+- `numero_dias`: Número de días para simular el crecimiento.
+- `poblacion_bacterias`: Población actual de bacterias en cada día de la simulación.
+
+### Seudocódigo:
+
+**Inicio**
+
+1. **Paso 1: Pedir al Usuario el Número Inicial de Bacterias**
+    - Imprimir "Ingrese el número inicial de bacterias: "
+    - Leer `numero_inicial_bacterias`.
+
+2. **Paso 2: Pedir al Usuario la Tasa de Crecimiento Diaria**
+    - Imprimir "Ingrese la tasa de crecimiento diaria (en porcentaje, por ejemplo, 10 para 10%): "
+    - Leer `tasa_crecimiento_diaria`.
+
+3. **Paso 3: Pedir al Usuario Cuántos Días se Simularán**
+    - Imprimir "Ingrese el número de días: "
+    - Leer `numero_dias`.
+
+4. **Paso 4: Establecer la Población Inicial de Bacterias**
+    - Asignar `numero_inicial_bacterias` a `poblacion_bacterias`.
+
+5. **Paso 5: Simular el Crecimiento de Bacterias**
+    - Para cada día desde 1 hasta `numero_dias`:
+        - Aumentar `poblacion_bacterias`:
+          - `poblacion_bacterias = poblacion_bacterias * (1 + tasa_crecimiento_diaria / 100)`.
+
+6. **Paso 6: Mostrar Cuántas Bacterias Hay Después de los Días Indicados**
+    - Imprimir "Número de bacterías después de ", `numero_dias`, " días: ", `poblacion_bacterias`.
+
+**Fin**
+
+## Tercer ejercicio: Calcular la edad de una persona a partir de su fecha de nacimiento y la fecha actual
+### Seudocodigo
+-Primero asignamos variables
+
+### Inicio
+
+**Variables:**
+- `dia_nacimiento`: Día de la fecha de nacimiento.
+- `mes_nacimiento`: Mes de la fecha de nacimiento.
+- `anio_nacimiento`: Año de la fecha de nacimiento.
+- `dia_actual`: Día de la fecha actual.
+- `mes_actual`: Mes de la fecha actual.
+- `anio_actual`: Año de la fecha actual.
+- `edad_años`: Edad en años.
+- `edad_meses`: Edad en meses.
+- `edad_dias`: Edad en días.
+- `cumpleanos`: Si hoy es el cumpleaños.
+
+### Paso 1: Obtener Fechas
+
+1. Imprimir "Introduce tu fecha de nacimiento (día mes año):"
+2. Leer `dia_nacimiento`, `mes_nacimiento`, `anio_nacimiento`
+3. Imprimir "Introduce la fecha actual (día mes año):"
+4. Leer `dia_actual`, `mes_actual`, `anio_actual`
+
+### Paso 2: Calcular Edad
+
+1. Calcular `edad_anios` como `anio_actual - anio_nacimiento`
+2. Calcular `edad_meses` como `mes_actual - mes_nacimiento`
+3. Calcular `edad_dias` como `dia_actual - dia_nacimiento`
+
+### Paso 3: Ajustar Edad en Meses y Días
+
+1. Si `edad_dias` es menor que 0:
+   - Restar 1 de `edad_meses`
+   - Determinar el número de días del mes anterior:
+     - Si `mes_actual` es enero:
+       - Ajustar al mes de diciembre del año anterior
+     - De lo contrario:
+       - Ajustar al mes anterior
+   - Sumar los días del mes anterior a `edad_dias`
+
+2. Si `edad_meses` es menor que 0:
+   - Restar 1 de `edad_anios`
+   - Sumar 12 a `edad_meses`
+
+### Paso 4: Verificar si Ya Cumplió Años Este Año
+
+1. Si `mes_actual` es mayor que `mes_nacimiento` o (`mes_actual` es igual a `mes_nacimiento` y `dia_actual` es mayor o igual a `dia_nacimiento`):
+   - Decir "Ya ha cumplido años este año"
+2. Si no:
+   - Decir "Aún no ha cumplido años este año"
+
+### Paso 5: Comprobar si Hoy es su Cumpleaños
+
+1. Si `dia_actual` es igual a `dia_nacimiento` y `mes_actual` es igual a `mes_nacimiento`:
+   - Imprimir "¡Feliz Cumpleaños!"
+   - Decir "Hoy es tu cumpleaños"
+2. Si no:
+   - Decir "No es tu cumpleaños hoy"
+
+### Paso 6: Mostrar Resultados
+
+1. Imprimir "Edad: ", `edad_anios`, " años, ", `edad_meses`, " meses, ", `edad_dias`, " días."
+2. Imprimir `cumpleanos`
+
+### Fin
